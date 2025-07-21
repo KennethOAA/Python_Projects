@@ -26,6 +26,7 @@ def suspender():
     return f"Suspensión programada en {delay} segundos"
 
 if __name__ == "__main__":
-    app.run(port=4414)
+    app.run(host="0.0.0.0", port=4414)
+
 
     
