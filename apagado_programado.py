@@ -8,22 +8,10 @@ app = Flask(__name__)
 # Ejecucion que no bloquea al principal /hilo
 def ejecutar_accion(accion, delay):
     time.sleep(delay)
-    sistema = platform.system()
-
     if accion == "apagar":
-        if sistema == "Windows":
-            os.system("shutdown /s /t 0")
-        elif sistema == "Linux":
-            os.system("shutdown now")
-        elif sistema == "Darwin":
-            os.system("sudo shutdown -h now")
+        os.system("shutdown /s /t 0")
     elif accion == "suspender":
-        if sistema == "Windows":
-            os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
-        elif sistema == "Linux":
-            os.system("systemctl suspend")
-        elif sistema == "Darwin":
-            os.system("pmset sleepnow")
+        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 @app.route("/apagar")
 def apagar():
