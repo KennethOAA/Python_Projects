@@ -3,7 +3,7 @@ import os
 import platform
 import threading
 import time
-
+#localhost:4414/suspender?t=10
 app = Flask(__name__)
 # Ejecucion que no bloquea al principal /hilo
 def ejecutar_accion(accion, delay):
